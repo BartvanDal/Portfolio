@@ -1,0 +1,13 @@
+﻿@inject IExperienceService _experienceService
+
+
+
+
+@code {
+    public List<ExperienceViewModel> Experiences { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Experiences = await _experienceService.GetAsync();
+    }
+}

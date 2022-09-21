@@ -11,8 +11,8 @@ namespace Portfolio.Data
 {
     public class PortfolioContext : DbContext
     {
-        DbSet<Tag> Tags { get; set; }
-        DbSet<Experience> Experiences { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
 
         public PortfolioContext(DbContextOptions<PortfolioContext> options) : base(options)
         {

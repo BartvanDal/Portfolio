@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Frontend", "Portfolio.Frontend\Portfolio.Frontend.csproj", "{1A000375-3B3B-4906-A874-E31318537FD5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Frontend", "Portfolio.Frontend\Portfolio.Frontend.csproj", "{1A000375-3B3B-4906-A874-E31318537FD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Core", "Portfolio.Core\Portfolio.Core.csproj", "{4A33F27A-6FEA-46C7-9F91-C9C7137B0E66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Core", "Portfolio.Core\Portfolio.Core.csproj", "{4A33F27A-6FEA-46C7-9F91-C9C7137B0E66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Data", "Portfolio.Data\Portfolio.Data.csproj", "{24FD0185-DBCB-4B8D-A6C8-ABF1C73645A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Data", "Portfolio.Data\Portfolio.Data.csproj", "{24FD0185-DBCB-4B8D-A6C8-ABF1C73645A6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Frontend", "10 Frontend", "{46B15DBC-88A0-40C9-BB3C-4C12210CE772}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Core", "20 Core", "{A8E4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 Data", "30 Data", "{95EDF112-718C-4E85-A557-25F4995314B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.CompositionRoot", "Portfolio.CompositionRoot\Portfolio.CompositionRoot.csproj", "{F1F3F1FC-043D-4981-BE44-4D79D14758EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.CompositionRoot", "Portfolio.CompositionRoot\Portfolio.CompositionRoot.csproj", "{F1F3F1FC-043D-4981-BE44-4D79D14758EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
