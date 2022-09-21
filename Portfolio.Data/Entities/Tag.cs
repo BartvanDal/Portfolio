@@ -12,7 +12,7 @@ namespace Portfolio.Data.Entities
         [Required]
         public string Name { get; set; } = "";
         [Required]
-        public DateTime StartedAt { get; set; } = DateTime.Now;
+        public int YearStarted { get; set; } = 0;
 
         public virtual ICollection<Experience> Experiences { get; set; } = new List<Experience>();
     }

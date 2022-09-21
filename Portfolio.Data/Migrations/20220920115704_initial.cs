@@ -31,7 +31,7 @@ namespace Portfolio.Data.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
-                    StartedAt = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    YearStarted = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,6 +61,21 @@ namespace Portfolio.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.InsertData(
+                table: "Experiences",
+                columns: new[] { "Id", "Description", "Name", "StartedAt" },
+                values: new object[] { 1, null, "AniMedic", new DateTime(2018, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified) });
+
+            migrationBuilder.InsertData(
+                table: "Tags",
+                columns: new[] { "Id", "Name", "YearStarted" },
+                values: new object[] { 1, "C#", 2018 });
+
+            migrationBuilder.InsertData(
+                table: "ExperienceTag",
+                columns: new[] { "ExperiencesId", "TagsId" },
+                values: new object[] { 1, 1 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_ExperienceTag_TagsId",

@@ -11,7 +11,7 @@ using Portfolio.Data;
 namespace Portfolio.Data.Migrations
 {
     [DbContext(typeof(PortfolioContext))]
-    [Migration("20220919133309_initial")]
+    [Migration("20220920115704_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,13 @@ namespace Portfolio.Data.Migrations
                     b.HasIndex("TagsId");
 
                     b.ToTable("ExperienceTag");
+
+                    b.HasData(
+                        new
+                        {
+                            ExperiencesId = 1,
+                            TagsId = 1
+                        });
                 });
 
             modelBuilder.Entity("Portfolio.Data.Entities.Experience", b =>
@@ -53,6 +60,14 @@ namespace Portfolio.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Experiences");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "AniMedic",
+                            StartedAt = new DateTime(2018, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                        });
                 });
 
             modelBuilder.Entity("Portfolio.Data.Entities.Tag", b =>
@@ -65,12 +80,20 @@ namespace Portfolio.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("StartedAt")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("YearStarted")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
                     b.ToTable("Tags");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "C#",
+                            YearStarted = 2018
+                        });
                 });
 
             modelBuilder.Entity("ExperienceTag", b =>
