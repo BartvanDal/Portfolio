@@ -1,7 +1,18 @@
 ﻿@inject IExperienceService _experienceService
-
-
-
+<div class="container">
+    <div class="text-center main-content">
+        <h1>Portfolio</h1>
+        <hr />
+    </div>
+    <div class="row">
+        @foreach (var experience in Experiences)
+        {
+            <div class="col-lg-4 col-md-6 col-12 user-select-none">
+                <ExperienceTumbnail Experience="@experience" />
+            </div>
+        }
+    </div>
+</div>
 
 @code {
     public List<ExperienceViewModel> Experiences { get; set; }

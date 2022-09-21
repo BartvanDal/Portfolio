@@ -1,0 +1,15 @@
+﻿<h3>
+    @Experience.Name
+</h3>
+
+<hr />
+
+@foreach (var tag in Experience.Tags)
+{
+    <span class="badge bg-secondary m-1">@tag</span>
+}
+
+@code {
+    [Parameter]
+    public ExperienceViewModel Experience { get; set; }
+}

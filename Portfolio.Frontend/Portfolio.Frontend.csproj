@@ -11,8 +11,4 @@
     <ProjectReference Include="..\Portfolio.Core\Portfolio.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\Experiences\" />
-  </ItemGroup>
-
 </Project>
