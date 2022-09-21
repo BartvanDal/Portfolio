@@ -7,6 +7,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
 builder.Services.Inject();
+builder.Services.AddDataContext();
 
 var app = builder.Build();
 
