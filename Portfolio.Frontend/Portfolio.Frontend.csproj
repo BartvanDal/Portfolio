@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Portfolio.CompositionRoot\Portfolio.CompositionRoot.csproj" />
-    <ProjectReference Include="..\Portfolio.Core\Portfolio.Core.csproj" />
+    <PackageReference Include="Blazored.Modal" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Experiences\" />
+    <ProjectReference Include="..\Portfolio.CompositionRoot\Portfolio.CompositionRoot.csproj" />
+    <ProjectReference Include="..\Portfolio.Core\Portfolio.Core.csproj" />
   </ItemGroup>
 
 </Project>

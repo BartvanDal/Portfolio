@@ -1,0 +1,29 @@
+﻿<h3>
+    @Experience.Name
+</h3>
+@if (Experience.HasImage)
+{
+    <img class="img-fluid rounded hover-overlay" src="/img/experiences/@Experience.ImageName" alt="">
+}
+else if (!string.IsNullOrWhiteSpace(Experience.Description))
+{
+    <div class="text-wrap">
+        @if (Experience.Description.Length <= 500)
+        {
+            @Experience.Description
+        }
+        else
+        {
+            @(@Experience.Description.Substring(0, 500) + "...")
+        }
+    </div>
+}
+
+<hr />
+
+<TagDetails Tags="@Experience.Tags"/>
+
+@code {
+    [Parameter]
+    public ExperienceViewModel Experience { get; set; }
+}

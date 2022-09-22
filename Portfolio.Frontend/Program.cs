@@ -1,3 +1,4 @@
+using Blazored.Modal;
 using Portfolio.CompositionRoot;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,7 @@ builder.Services.AddServerSideBlazor();
 
 builder.Services.Inject();
 builder.Services.AddDataContext();
+builder.Services.AddBlazoredModal();
 
 var app = builder.Build();
 

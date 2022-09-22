@@ -1,0 +1,34 @@
+﻿@inject IExperienceService _experienceService
+<div class="container mb-5">
+    <div class="text-center main-content">
+        <h1>Portfolio</h1>
+        <hr />
+    </div>
+    <div class="row">
+        @foreach (var experience in Experiences)
+        {
+            <div class="col-lg-4 col-md-6 col-12 user-select-none tumbnail-hover" @onclick="() => OpenExperience(experience)">
+                <ExperienceTumbnail Experience="@experience" />
+            </div>
+
+        }
+    </div>
+
+</div>
+
+@code {
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    public List<ExperienceViewModel> Experiences { get; set; } = null!;
+    protected override async Task OnInitializedAsync()
+    {
+        Experiences = await _experienceService.GetAsync();
+    }
+
+    private void OpenExperience(ExperienceViewModel experience)
+    {
+        var param = new ModalParameters();
+        param.Add("Experience", experience);
+        Modal.Show<ExperienceDetail>(experience.Name, param);
+    }
+}

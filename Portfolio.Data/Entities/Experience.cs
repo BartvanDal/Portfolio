@@ -11,5 +11,7 @@ namespace Portfolio.Data.Entities
         public DateTime StartedAt { get; set; } = DateTime.Now;
         public virtual ICollection<Tag> Tags { get; set; } = new List<Tag>();
 
+        public string? ImageName { get; set; }
+
     }
 }

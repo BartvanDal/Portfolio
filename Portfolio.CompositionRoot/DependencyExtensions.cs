@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Portfolio.Core.Services;
 using Portfolio.Data;
+using Portfolio.Data.Repositories;
 
 namespace Portfolio.CompositionRoot
 {
@@ -9,7 +10,11 @@ namespace Portfolio.CompositionRoot
     {
         public static void Inject(this IServiceCollection services)
         {
-            services.AddSingleton<ITagService, TagService>();
+            services.AddTransient<ITagService, TagService>();
+            services.AddTransient<IExperienceService, ExperienceService>();
+
+
+            services.AddTransient<IExperienceRepository, ExperienceRepository>();
         }
 
         public static void AddDataContext(this IServiceCollection services)

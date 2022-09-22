@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portfolio.Data;
 
@@ -10,9 +11,10 @@ using Portfolio.Data;
 namespace Portfolio.Data.Migrations
 {
     [DbContext(typeof(PortfolioContext))]
-    partial class PortfolioContextModelSnapshot : ModelSnapshot
+    [Migration("20220921093255_added basisopleiding seed data")]
+    partial class addedbasisopleidingseeddata
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.9");
@@ -98,9 +100,6 @@ namespace Portfolio.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ImageName")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -117,7 +116,6 @@ namespace Portfolio.Data.Migrations
                         {
                             Id = 1,
                             Description = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-                            ImageName = "c1bf47f0ecce9864a6d5e4651ef11782.jpg",
                             Name = "Goudkoorts",
                             StartedAt = new DateTime(2018, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
@@ -125,13 +123,13 @@ namespace Portfolio.Data.Migrations
                         {
                             Id = 2,
                             Name = "Portfolio",
-                            StartedAt = new DateTime(2022, 9, 22, 12, 23, 14, 306, DateTimeKind.Local).AddTicks(3280)
+                            StartedAt = new DateTime(2022, 9, 21, 11, 32, 55, 456, DateTimeKind.Local).AddTicks(3969)
                         },
                         new
                         {
                             Id = 3,
                             Name = "Basisopleiding Sogeti",
-                            StartedAt = new DateTime(2022, 9, 22, 12, 23, 14, 306, DateTimeKind.Local).AddTicks(3282)
+                            StartedAt = new DateTime(2022, 9, 21, 11, 32, 55, 456, DateTimeKind.Local).AddTicks(3971)
                         });
                 });
 
