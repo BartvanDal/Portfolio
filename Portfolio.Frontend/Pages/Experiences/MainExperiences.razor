@@ -17,8 +17,9 @@
 </div>
 
 @code {
-    public List<ExperienceViewModel> Experiences { get; set; }
     [CascadingParameter] public IModalService Modal { get; set; } = default!;
+
+    public List<ExperienceViewModel> Experiences { get; set; } = null!;
     protected override async Task OnInitializedAsync()
     {
         Experiences = await _experienceService.GetAsync();
@@ -28,6 +29,6 @@
     {
         var param = new ModalParameters();
         param.Add("Experience", experience);
-        Modal.Show<ExperienceTumbnail>(experience.Name, param);
+        Modal.Show<ExperienceDetail>(experience.Name, param);
     }
 }

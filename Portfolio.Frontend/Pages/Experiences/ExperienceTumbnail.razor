@@ -21,10 +21,7 @@ else if (!string.IsNullOrWhiteSpace(Experience.Description))
 
 <hr />
 
-@foreach (var tag in Experience.Tags)
-{
-    <span class="badge bg-secondary m-1">@tag</span>
-}
+<TagDetails Tags="@Experience.Tags"/>
 
 @code {
     [Parameter]

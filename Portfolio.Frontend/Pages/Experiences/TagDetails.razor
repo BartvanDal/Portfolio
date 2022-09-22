@@ -1,0 +1,9 @@
+﻿@foreach (var tag in Tags)
+{
+    <span class="badge bg-secondary m-1">@tag</span>
+}
+
+@code {
+    [Parameter]
+    public ICollection<string> Tags { get; set; } = new List<string>();
+}
