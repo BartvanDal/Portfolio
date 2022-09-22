@@ -13,7 +13,10 @@ namespace Portfolio.Core.ViewModels
         public string Name { get; set; } = "";
         public string? Description { get; set; }
         public ICollection<string> Tags { get; set; } = new List<string>();
-
+        public string? ImageName { get; set; }
+        
+        public bool HasImage { get { return !string.IsNullOrWhiteSpace(ImageName); } }
+     
     }
     public static class ExperienceViewModelMapper
     {
@@ -22,7 +25,8 @@ namespace Portfolio.Core.ViewModels
             return new ExperienceViewModel() { 
                 Id = experience.Id,
                 Name = experience.Name,
-                Description = experience.Description,
+                Description = string.IsNullOrWhiteSpace(experience.Description) ? experience.Description : experience.Description,
+                ImageName = experience.ImageName,
                 Tags = experience.Tags.Select(x=> x.Name).ToList()
             };
         }

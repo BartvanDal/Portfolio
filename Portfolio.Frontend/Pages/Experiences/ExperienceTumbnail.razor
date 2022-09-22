@@ -1,7 +1,23 @@
 ﻿<h3>
     @Experience.Name
 </h3>
-<img class="img-fluid rounded hover-overlay" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/04LDEYRW59.jpg" alt="">
+@if (Experience.HasImage)
+{
+    <img class="img-fluid rounded hover-overlay" src="/img/experiences/@Experience.ImageName" alt="">
+}
+else if (!string.IsNullOrWhiteSpace(Experience.Description))
+{
+    <div class="text-wrap">
+        @if (Experience.Description.Length <= 500)
+        {
+            @Experience.Description
+        }
+        else
+        {
+            @(@Experience.Description.Substring(0, 500) + "...")
+        }
+    </div>
+}
 
 <hr />
 
