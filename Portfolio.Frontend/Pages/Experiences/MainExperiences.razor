@@ -7,18 +7,27 @@
     <div class="row">
         @foreach (var experience in Experiences)
         {
-            <div class="col-lg-4 col-md-6 col-12 user-select-none tumbnail-hover">
+            <div class="col-lg-4 col-md-6 col-12 user-select-none tumbnail-hover" @onclick="() => OpenExperience(experience)">
                 <ExperienceTumbnail Experience="@experience" />
             </div>
+
         }
     </div>
+
 </div>
 
 @code {
     public List<ExperienceViewModel> Experiences { get; set; }
-
+    [CascadingParameter] public IModalService Modal { get; set; } = default!;
     protected override async Task OnInitializedAsync()
     {
         Experiences = await _experienceService.GetAsync();
+    }
+
+    private void OpenExperience(ExperienceViewModel experience)
+    {
+        var param = new ModalParameters();
+        param.Add("Experience", experience);
+        Modal.Show<ExperienceTumbnail>(experience.Name, param);
     }
 }
