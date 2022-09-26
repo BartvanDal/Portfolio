@@ -10,9 +10,7 @@ namespace Portfolio.CompositionRoot
     {
         public static void Inject(this IServiceCollection services)
         {
-            services.AddTransient<ITagService, TagService>();
             services.AddTransient<IExperienceService, ExperienceService>();
-
 
             services.AddTransient<IExperienceRepository, ExperienceRepository>();
         }

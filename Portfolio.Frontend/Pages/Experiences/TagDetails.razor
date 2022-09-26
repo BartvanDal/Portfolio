@@ -1,9 +1,22 @@
 ﻿@foreach (var tag in Tags)
 {
-    <span class="badge bg-secondary m-1">@tag</span>
+    <span class="badge text-white m-1 @GetColor(tag)">@tag.Name</span>
 }
 
 @code {
     [Parameter]
-    public ICollection<string> Tags { get; set; } = new List<string>();
+    public ICollection<TagViewModel> Tags { get; set; } = new List<TagViewModel>();
+
+
+    public string GetColor(TagViewModel tag){
+        if (tag.Type == "Language")
+            return "tag-language";
+        if (tag.Type == "Framework")
+            return "tag-framework";
+        if (tag.Type == "Tool")
+            return "tag-tool";
+
+    return "tag-typeless";
+    }
+
 }
