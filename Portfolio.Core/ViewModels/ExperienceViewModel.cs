@@ -12,7 +12,7 @@ namespace Portfolio.Core.ViewModels
         public int Id { get; set; }
         public string Name { get; set; } = "";
         public string? Description { get; set; }
-        public ICollection<string> Tags { get; set; } = new List<string>();
+        public ICollection<TagViewModel> Tags { get; set; } = new List<TagViewModel>();
         public string? ImageName { get; set; }
         
         public bool HasImage { get { return !string.IsNullOrWhiteSpace(ImageName); } }
@@ -27,7 +27,7 @@ namespace Portfolio.Core.ViewModels
                 Name = experience.Name,
                 Description = string.IsNullOrWhiteSpace(experience.Description) ? experience.Description : experience.Description,
                 ImageName = experience.ImageName,
-                Tags = experience.Tags.Select(x=> x.Name).ToList()
+                Tags = experience.Tags.OrderBy(x=> x.Type).Select(x => x.ToViewModel()).ToList()
             };
         }
     }

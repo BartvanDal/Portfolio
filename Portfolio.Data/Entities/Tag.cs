@@ -14,6 +14,15 @@ namespace Portfolio.Data.Entities
         [Required]
         public int YearStarted { get; set; } = 0;
 
+        public TagType? Type { get; set; }
+
         public virtual ICollection<Experience> Experiences { get; set; } = new List<Experience>();
+    }
+
+    public enum TagType
+    {
+        Language,
+        Framework,
+        Tool
     }
 }
