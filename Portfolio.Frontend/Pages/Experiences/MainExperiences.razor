@@ -7,7 +7,7 @@
     <div class="row">
         @foreach (var experience in Experiences)
         {
-            <div class="col-lg-4 col-md-6 col-12 user-select-none tumbnail-hover" @onclick="() => OpenExperience(experience)">
+            <div class="col-lg-4 col-md-6 col-12 user-select-none tumbnail-hover mb-5" @onclick="() => OpenExperience(experience)">
                 <ExperienceTumbnail Experience="@experience" />
             </div>
 
